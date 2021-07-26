@@ -440,6 +440,7 @@ nav {
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  align-items: center;
 }
 
 .rating img {
@@ -450,6 +451,7 @@ nav {
 .rating h4 {
   font-weight: 800;
   color: var(--clr-black);
+  margin-bottom: none;
 }
 
 .reviews-content {
@@ -598,6 +600,7 @@ nav {
   color: var(--clr-secondary-2);
   font-weight: 800;
   margin: 16px 0;
+  text-align: center;
 }
 
 .accordion p {

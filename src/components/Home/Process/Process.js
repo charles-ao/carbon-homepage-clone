@@ -7,6 +7,7 @@ const Process = () => {
     const banking = useRef(null)
 
 
+
     useEffect(() => {
 
         // Function to get scroll position
@@ -16,22 +17,60 @@ const Process = () => {
         window.addEventListener("scroll", updatePosition);
         updatePosition();
 
-        if (scrollPosition < 5100) {
-            download.current.style.opacity = 1
-            register.current.style.opacity = 0
-            banking.current.style.opacity = 0
-        }
+        if (window.innerWidth <= 1024) {
+            if (scrollPosition < 4300) {
+                download.current.style.opacity = 1
+                register.current.style.opacity = 0
+                banking.current.style.opacity = 0
+            }
+    
+            if (scrollPosition >= 4300 && scrollPosition <= 4800) {
+                download.current.style.opacity = 0
+                register.current.style.opacity = 1
+                banking.current.style.opacity = 0
+            }
+    
+            if (scrollPosition > 4800) {
+                download.current.style.opacity = 0
+                register.current.style.opacity = 0
+                banking.current.style.opacity = 1
+            }
+        } else if (window.innerWidth <= 1200) {
+            if (scrollPosition < 4800) {
+                download.current.style.opacity = 1
+                register.current.style.opacity = 0
+                banking.current.style.opacity = 0
+            }
+    
+            if (scrollPosition >= 4800 && scrollPosition <= 5300) {
+                download.current.style.opacity = 0
+                register.current.style.opacity = 1
+                banking.current.style.opacity = 0
+            }
+    
+            if (scrollPosition > 5300) {
+                download.current.style.opacity = 0
+                register.current.style.opacity = 0
+                banking.current.style.opacity = 1
+            }
+        } else {
+            if (scrollPosition < 5100) {
+                download.current.style.opacity = 1
+                register.current.style.opacity = 0
+                banking.current.style.opacity = 0
+            }
 
-        if (scrollPosition >= 5100 && scrollPosition <= 5700) {
-            download.current.style.opacity = 0
-            register.current.style.opacity = 1
-            banking.current.style.opacity = 0
-        }
+            if (scrollPosition >= 5100 && scrollPosition <= 5700) {
+                download.current.style.opacity = 0
+                register.current.style.opacity = 1
+                banking.current.style.opacity = 0
+            }
 
-        if (scrollPosition > 5700) {
-            download.current.style.opacity = 0
-            register.current.style.opacity = 0
-            banking.current.style.opacity = 1
+            if (scrollPosition > 5700) {
+                download.current.style.opacity = 0
+                register.current.style.opacity = 0
+                banking.current.style.opacity = 1
+            }
         }
 
         return () => window.removeEventListener("scroll", updatePosition);
